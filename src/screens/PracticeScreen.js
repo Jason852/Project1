@@ -1,5 +1,6 @@
 import { StyleSheet, Text, View, Image } from "react-native";
 import React from "react";
+import { heightPercentageToDP, widthPercentageToDP } from "../../utils/scaler";
 
 const Author = "John Kearns";
 const Views = "1.5M";
@@ -13,11 +14,12 @@ export default function PracticeScreen() {
           source={require("../images/practiceImage.jpeg")}
           style={styles.image}
         />
+        {/* put view here wrapping text, styling goes here*/}
         <Text
           style={{
             position: "absolute",
             backgroundColor: "black",
-            width: 40,
+            width: widthPercentageToDP(10),
             color: "white",
             textAlign: "center",
             bottom: 0,
@@ -43,7 +45,7 @@ export default function PracticeScreen() {
           How to take a photo with your hands
         </Text>
       </View>
-      <View style={{ flexDirection: "column" }}>
+      <View>
         <Text style={{ marginTop: 20 }}>
           {Author} - {Views} - {TimeLapse}
         </Text>
