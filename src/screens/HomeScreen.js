@@ -9,6 +9,10 @@ export default function HomeScreen({ navigation }) {
         title="Go to Second Page"
         onPress={() => navigation.navigate("SecScreen")}
       />
+      <Button
+        title="Go to Fourth Page"
+        onPress={() => navigation.navigate("FourthScreen")}
+      />
     </View>
   );
 }
