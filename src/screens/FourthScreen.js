@@ -29,6 +29,19 @@ export default function FourthScreen() {
           }}
         ></Image>
       </View>
+      <View style={styles.buttonsContainer}>
+        <View style={styles.passBtn}>
+          <Text style={{ fontSize: 25 }}>Pass</Text>
+          <Icon
+            style={{
+              color: "white",
+              //marginTop: "50%",
+            }}
+            name={"close-outline"}
+            size={25}
+          />
+        </View>
+      </View>
     </View>
   );
 }
@@ -56,13 +69,25 @@ const styles = StyleSheet.create({
     backgroundColor: "yellow",
     //height: heightPercentageToDP(1),
   },
+  buttonsContainer: {
+    backgroundColor: "grey",
+    height: heightPercentageToDP(10),
+    flexDirection: "row",
+    //justifyContent: "center",
+  },
+  passBtn: {
+    flexDirection: "row",
+    alignItems: "center",
+  },
 });
 
-// <Icon
-// style={{
-//     color: 'white',
-//     marginTop: '50%',
-//   }}
-//   name={'ios-play'}
-//   size={45}
-// />
+// working on adding buttons and icons.  Last thing done was taking off the margin top from the icon inorder to be able to see it!
+
+/*{ <Icon
+style={{
+    color: 'white',
+    marginTop: '50%',
+  }}
+  name={'ios-play'}
+  size={45}
+/> */
