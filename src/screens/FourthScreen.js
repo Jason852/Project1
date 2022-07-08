@@ -24,22 +24,36 @@ export default function FourthScreen() {
         <Image
           source={require("../images/pexels-frida.jpg")}
           style={{
-            height: heightPercentageToDP(45),
+            height: heightPercentageToDP(40),
             width: widthPercentageToDP(100),
           }}
         ></Image>
       </View>
       <View style={styles.buttonsContainer}>
         <View style={styles.passBtn}>
-          <Text style={{ fontSize: 25 }}>Pass</Text>
+          <Text style={styles.textBtn}>Pass</Text>
+          <Icon
+            style={{
+              color: "black",
+              marginLeft: 5,
+            }}
+            name={"close-outline"}
+            size={35}
+          />
+        </View>
+        <View style={styles.likeBtn}>
+          <Text style={styles.textBtn}>Like</Text>
           <Icon
             style={{
               color: "white",
-              //marginTop: "50%",
+              marginLeft: 5,
             }}
-            name={"close-outline"}
-            size={25}
+            name={"heart-outline"}
+            size={30}
           />
+        </View>
+        <View style={styles.setupBtn}>
+          <Text style={styles.textBtn}>Set Up</Text>
         </View>
       </View>
     </View>
@@ -73,15 +87,46 @@ const styles = StyleSheet.create({
     backgroundColor: "grey",
     height: heightPercentageToDP(10),
     flexDirection: "row",
-    //justifyContent: "center",
+    justifyContent: "space-evenly",
+    borderBottomColor: "black",
+    borderBottomWidth: 2,
+    borderBottomColor: "black",
   },
   passBtn: {
     flexDirection: "row",
     alignItems: "center",
+    backgroundColor: "yellow",
+    marginTop: heightPercentageToDP(1.5),
+    marginBottom: heightPercentageToDP(1.5),
+    paddingLeft: widthPercentageToDP(1),
+    borderRadius: 12,
+  },
+  likeBtn: {
+    flexDirection: "row",
+    alignItems: "center",
+    backgroundColor: "blue",
+    marginTop: heightPercentageToDP(1.5),
+    marginBottom: heightPercentageToDP(1.5),
+    paddingLeft: widthPercentageToDP(2),
+    paddingRight: widthPercentageToDP(2),
+    borderRadius: 12,
+  },
+  setupBtn: {
+    flexDirection: "row",
+    alignItems: "center",
+    backgroundColor: "red",
+    marginTop: heightPercentageToDP(1.5),
+    marginBottom: heightPercentageToDP(1.5),
+    paddingLeft: widthPercentageToDP(2),
+    paddingRight: widthPercentageToDP(2),
+    borderRadius: 12,
+  },
+  textBtn: {
+    fontSize: 25,
   },
 });
 
-// working on adding buttons and icons.  Last thing done was taking off the margin top from the icon inorder to be able to see it!
+// DAILY NOTES: Added buttons and styling for buttons. Need to add lines between buttons and work on bottom border to make it not 100%. Questions for Dario.. for styling the buttons have all the same styling except for a few properties... how to better code it so its less redundant but still can have some differences.----- See if i can add multiple styling styles to each btn. Also work on buttons to make them all the same width...suggestion, put a width on the btn class that im going to create so they are all the exact same size.
 
 /*{ <Icon
 style={{
