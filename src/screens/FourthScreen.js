@@ -30,7 +30,7 @@ export default function FourthScreen() {
         ></Image>
       </View>
       <View style={styles.buttonsContainer}>
-        <View style={styles.passBtn}>
+        <View style={[styles.btn, styles.passBtn]}>
           <Text style={styles.textBtn}>Pass</Text>
           <Icon
             style={{
@@ -41,7 +41,8 @@ export default function FourthScreen() {
             size={35}
           />
         </View>
-        <View style={styles.likeBtn}>
+        <View style={{ height: 65, width: 2, backgroundColor: "black" }}></View>
+        <View style={[styles.btn, styles.likeBtn]}>
           <Text style={styles.textBtn}>Like</Text>
           <Icon
             style={{
@@ -52,8 +53,28 @@ export default function FourthScreen() {
             size={30}
           />
         </View>
-        <View style={styles.setupBtn}>
+        <View style={{ height: 65, width: 2, backgroundColor: "black" }}></View>
+        <View style={[styles.btn, styles.setupBtn]}>
           <Text style={styles.textBtn}>Set Up</Text>
+        </View>
+      </View>
+      <View style={styles.partialLineBtm}></View>
+      <View style={styles.infoContainer}>
+        <View>
+          <Text style={styles.infoGroup}>People in common</Text>
+          <Text style={styles.info}>Alex Gold and 100 others</Text>
+        </View>
+        <View>
+          <Text style={styles.infoGroup}>Education</Text>
+          <Text style={styles.info}>University of Austin</Text>
+        </View>
+        <View>
+          <Text style={styles.infoGroup}>Job</Text>
+          <Text style={styles.info}>Job</Text>
+        </View>
+        <View>
+          <Text style={styles.infoGroup}>Details</Text>
+          <Text style={styles.info}>Details</Text>
         </View>
       </View>
     </View>
@@ -63,7 +84,7 @@ export default function FourthScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "red",
+    backgroundColor: "grey",
   },
   header: {
     backgroundColor: "grey",
@@ -76,8 +97,9 @@ const styles = StyleSheet.create({
     marginLeft: widthPercentageToDP(2),
   },
   headerText: {
-    fontSize: 15,
-    marginBottom: heightPercentageToDP(0.8),
+    //fontSize: 18,
+    fontSize: heightPercentageToDP(2),
+    marginBottom: heightPercentageToDP(0.7),
   },
   imageContainer: {
     backgroundColor: "yellow",
@@ -88,45 +110,58 @@ const styles = StyleSheet.create({
     height: heightPercentageToDP(10),
     flexDirection: "row",
     justifyContent: "space-evenly",
-    borderBottomColor: "black",
-    borderBottomWidth: 2,
-    borderBottomColor: "black",
+    alignItems: "center",
+    // borderBottomColor: "black",
+    // borderBottomWidth: 2,
+  },
+  btn: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center",
+    height: heightPercentageToDP(6.0),
+    width: widthPercentageToDP(26),
+    //marginTop: heightPercentageToDP(1.5),
+    //marginBottom: heightPercentageToDP(1.5),
+    // paddingLeft: widthPercentageToDP(1),
+    borderRadius: 12,
   },
   passBtn: {
-    flexDirection: "row",
-    alignItems: "center",
     backgroundColor: "yellow",
-    marginTop: heightPercentageToDP(1.5),
-    marginBottom: heightPercentageToDP(1.5),
-    paddingLeft: widthPercentageToDP(1),
-    borderRadius: 12,
   },
   likeBtn: {
-    flexDirection: "row",
-    alignItems: "center",
     backgroundColor: "blue",
-    marginTop: heightPercentageToDP(1.5),
-    marginBottom: heightPercentageToDP(1.5),
-    paddingLeft: widthPercentageToDP(2),
-    paddingRight: widthPercentageToDP(2),
-    borderRadius: 12,
   },
   setupBtn: {
-    flexDirection: "row",
-    alignItems: "center",
     backgroundColor: "red",
-    marginTop: heightPercentageToDP(1.5),
-    marginBottom: heightPercentageToDP(1.5),
-    paddingLeft: widthPercentageToDP(2),
-    paddingRight: widthPercentageToDP(2),
-    borderRadius: 12,
   },
   textBtn: {
     fontSize: 25,
   },
+  partialLineBtm: {
+    height: 2,
+    width: widthPercentageToDP(85),
+    backgroundColor: "black",
+    alignSelf: "center",
+  },
+  infoContainer: {
+    backgroundColor: "grey",
+    flexDirection: "column",
+    height: heightPercentageToDP(38),
+    justifyContent: "space-around",
+    paddingLeft: widthPercentageToDP(7),
+    paddingTop: heightPercentageToDP(1.5),
+    paddingBottom: heightPercentageToDP(1.5),
+  },
+  infoGroup: {
+    fontSize: heightPercentageToDP(2),
+    fontWeight: "bold",
+  },
+  info: {
+    fontSize: heightPercentageToDP(1.8),
+  },
 });
 
-// DAILY NOTES: Added buttons and styling for buttons. Need to add lines between buttons and work on bottom border to make it not 100%. Questions for Dario.. for styling the buttons have all the same styling except for a few properties... how to better code it so its less redundant but still can have some differences.----- See if i can add multiple styling styles to each btn. Also work on buttons to make them all the same width...suggestion, put a width on the btn class that im going to create so they are all the exact same size.
+// Daily Notes: Is this the way to make lines? I used decimals for some of my measurements, is that ok? For the buttons... is the styling ok? I didn't want to repeat too much
 
 /*{ <Icon
 style={{
