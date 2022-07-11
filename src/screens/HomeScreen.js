@@ -1,5 +1,6 @@
 import { Button, StyleSheet, Text, View } from "react-native";
 import React from "react";
+import { TouchableHighlight } from "react-native-gesture-handler";
 
 export default function HomeScreen({ navigation }) {
   return (
@@ -13,6 +14,12 @@ export default function HomeScreen({ navigation }) {
         title="Go to Fourth Page"
         onPress={() => navigation.navigate("FourthScreen")}
       />
+      <TouchableHighlight onPress={() => navigation.navigate("PracticeScreen")}>
+        <Text style={{ fontSize: 20 }}>Practice Screen</Text>
+      </TouchableHighlight>
+      <TouchableHighlight onPress={() => navigation.navigate("LayoutScreen")}>
+        <Text style={{ fontSize: 20, marginTop: 8 }}>LayoutScreen</Text>
+      </TouchableHighlight>
     </View>
   );
 }

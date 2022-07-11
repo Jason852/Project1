@@ -3,6 +3,7 @@ import HomeScreen from "../screens/HomeScreen";
 import PracticeScreen from "../screens/PracticeScreen";
 import SecScreen from "../screens/SecScreen";
 import FourthScreen from "../screens/FourthScreen";
+import LayoutScreen from "../screens/LayoutScreen";
 
 const Stack = createStackNavigator();
 
@@ -17,6 +18,7 @@ export default function MainNav() {
         name="FourthScreen"
         component={FourthScreen}
       />
+      <Stack.Screen name="LayoutScreen" component={LayoutScreen} />
     </Stack.Navigator>
   );
 }
