@@ -18,7 +18,11 @@ export default function MainNav() {
         name="FourthScreen"
         component={FourthScreen}
       />
-      <Stack.Screen name="LayoutScreen" component={LayoutScreen} />
+      <Stack.Screen
+        options={{ headerShown: false }}
+        name="LayoutScreen"
+        component={LayoutScreen}
+      />
     </Stack.Navigator>
   );
 }
