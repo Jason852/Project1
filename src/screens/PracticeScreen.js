@@ -6,7 +6,8 @@ const Author = "John Kearns";
 const Views = "1.5M";
 const TimeLapse = "4 days";
 
-export default function PracticeScreen() {
+export default function PracticeScreen({ route }) {
+  const { itemId, otherParams } = route.params;
   return (
     <View style={styles.container}>
       <View style={styles.containerB}>
@@ -49,6 +50,10 @@ export default function PracticeScreen() {
         <Text style={{ marginTop: 20 }}>
           {Author} - {Views} - {TimeLapse}
         </Text>
+      </View>
+      <View>
+        <Text>itemId: {JSON.stringify(itemId)}</Text>
+        <Text>otherParams: {JSON.stringify(otherParams)}</Text>
       </View>
     </View>
   );

@@ -6,7 +6,7 @@ export default function LayoutScreen() {
   return (
     <View style={styles.container}>
       <View style={styles.sectionOne}>
-        <Text style={{ fontSize: 25 }}>Section One</Text>
+        <Text style={{ fontSize: 25 }}>Section 1</Text>
       </View>
       <View style={styles.sectionTwo}>
         <Text style={{ fontSize: 20 }}>Section 2</Text>

@@ -14,11 +14,21 @@ export default function HomeScreen({ navigation }) {
         title="Go to Fourth Page"
         onPress={() => navigation.navigate("FourthScreen")}
       />
-      <TouchableHighlight onPress={() => navigation.navigate("PracticeScreen")}>
+      <TouchableHighlight
+        onPress={() =>
+          navigation.navigate("PracticeScreen", {
+            itemId: 88,
+            otherParams: "hello hello",
+          })
+        }
+      >
         <Text style={{ fontSize: 20 }}>Practice Screen</Text>
       </TouchableHighlight>
       <TouchableHighlight onPress={() => navigation.navigate("LayoutScreen")}>
         <Text style={{ fontSize: 20, marginTop: 8 }}>LayoutScreen</Text>
+      </TouchableHighlight>
+      <TouchableHighlight onPress={() => navigation.navigate("BottomTabs")}>
+        <Text style={{ fontSize: 20, marginTop: 8 }}>Bottom Navigation</Text>
       </TouchableHighlight>
     </View>
   );
@@ -29,7 +39,7 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: "center",
     justifyContent: "center",
-    backgroundColor: "red",
+    backgroundColor: "grey",
   },
   text: {
     color: "green",

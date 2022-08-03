@@ -1,4 +1,4 @@
-import { Button, StyleSheet, Text, View, ImageBackground } from "react-native";
+import { StyleSheet, Text, View, ImageBackground } from "react-native";
 import React from "react";
 
 export default function SecScreen({ navigation }) {
