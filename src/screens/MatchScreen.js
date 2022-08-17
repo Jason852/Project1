@@ -2,42 +2,17 @@ import { StyleSheet, Text, View, Image } from "react-native";
 import React from "react";
 import { heightPercentageToDP, widthPercentageToDP } from "../../utils/scaler";
 import { SafeAreaView } from "react-native-safe-area-context";
+import MSHeaderComp from "../components/MatchScreenComp/MSHeaderComp";
+import TabsComp from "../components/MatchScreenComp/TabsComp";
 
 export default function MatchScreen() {
   return (
     <View style={styles.container}>
       <View style={styles.header}>
         <SafeAreaView></SafeAreaView>
-        <View
-          style={{
-            flexDirection: "row",
-            paddingBottom: heightPercentageToDP(1),
-          }}
-        >
-          <Image
-            source={require("../images/match-pro.jpg")}
-            style={styles.profileImage}
-          ></Image>
-          <View
-            style={{
-              flexDirection: "column",
-              marginLeft: widthPercentageToDP(5),
-              justifyContent: "space-evenly",
-            }}
-          >
-            <Text style={{ fontSize: 15 }}>Welcome Back</Text>
-            <Text style={{ fontSize: 19, fontWeight: "bold" }}>John</Text>
-          </View>
-        </View>
+        <MSHeaderComp welcome={"Welcome Back"} name={"John"} />
       </View>
-      <View style={styles.topTabs}>
-        <View style={styles.matchTab}>
-          <Text style={styles.matchTabText}>Matches</Text>
-        </View>
-        <View style={styles.friendsTab}>
-          <Text style={styles.friendsTabText}>Friends</Text>
-        </View>
-      </View>
+      <TabsComp matches={"Matches"} friends={"Friends"} />
       <View style={styles.messageArea}>
         <View style={styles.messageContainer}>
           <Image
@@ -110,30 +85,6 @@ const styles = StyleSheet.create({
   },
   header: {
     backgroundColor: "yellow",
-  },
-  profileImage: {
-    borderRadius: 50,
-    marginLeft: widthPercentageToDP(5),
-  },
-  topTabs: {
-    //backgroundColor: "red",
-    height: heightPercentageToDP(7),
-    flexDirection: "row",
-    justifyContent: "space-evenly",
-    alignItems: "center",
-  },
-  friendsTab: {
-    paddingTop: heightPercentageToDP(1),
-    paddingBottom: heightPercentageToDP(1),
-    borderBottomWidth: 2.5,
-    borderBottomColor: "black",
-  },
-  matchTabText: {
-    fontSize: 19,
-  },
-  friendsTabText: {
-    fontSize: 19,
-    fontWeight: "bold",
   },
   messageArea: {
     flexDirection: "column",

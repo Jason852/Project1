@@ -1,5 +1,10 @@
 import { StyleSheet, Text, View, ImageBackground } from "react-native";
 import React from "react";
+import HeaderComp from "../components/SecScreenComps/HeaderComp";
+import SubHeaderComp from "../components/SecScreenComps/SubHeaderComp";
+import ButtonsComp from "../components/SecScreenComps/ButtonsComp";
+import NewReleasesComp from "../components/SecScreenComps/NewReleasesComp";
+import BottomNavComp from "../components/SecScreenComps/BottomNavComp";
 
 export default function SecScreen({ navigation }) {
   return (
@@ -16,31 +21,13 @@ export default function SecScreen({ navigation }) {
           resizeMode="cover"
           style={{ height: "100%", width: "100%" }}
         >
-          <View
-            style={{ flexDirection: "row", justifyContent: "space-between" }}
-          >
-            <View>
-              <Text style={styles.logo}>NETFLIX</Text>
-            </View>
-            <View style={styles.headerRight}>
-              <Text
-                style={{
-                  color: "white",
-                  paddingRight: 10,
-                  fontSize: 20,
-                  fontWeight: "bold",
-                }}
-              >
-                Files
-              </Text>
-              <Text style={styles.headerText}>Menu</Text>
-            </View>
-          </View>
-          <View style={styles.subHeader}>
-            <Text style={styles.subText}>TV Shows</Text>
-            <Text style={styles.subText}>Movies</Text>
-            <Text style={styles.subText}>Categories</Text>
-          </View>
+          <HeaderComp logo={"NETFLIX"} files={"Files"} menu={"Menu"} />
+
+          <SubHeaderComp
+            shows={"TV Shows"}
+            movies={"Movies"}
+            categories={"Categories"}
+          />
           <View style={{ alignItems: "center", marginTop: 290 }}>
             <Text style={{ color: "white", fontSize: 30 }}>Turning Point</Text>
             <Text style={{ color: "white", fontSize: 20 }}>
@@ -48,22 +35,17 @@ export default function SecScreen({ navigation }) {
             </Text>
           </View>
         </ImageBackground>
-        <View style={styles.midSection}>
-          <View style={styles.midButtons}>
-            <Text style={styles.midText}>+</Text>
-            <Text style={styles.midText}>My List</Text>
-          </View>
-          <View style={styles.midButtons}>
-            <Text style={styles.midText}>></Text>
-            <Text style={styles.midText}>Play</Text>
-          </View>
-          <View style={styles.midButtons}>
-            <Text style={styles.midText}>i</Text>
-            <Text style={styles.midText}>Info</Text>
-          </View>
-        </View>
+        <ButtonsComp
+          addBtn={"+"}
+          myList={"My List"}
+          playBtn={">"}
+          play={"Play"}
+          infoBtn={"i"}
+          info={"Info"}
+        />
       </View>
-      <View style={{ backgroundColor: "green" }}>
+      <NewReleasesComp heading={"New Releases"} boxes={"Box"} />
+      {/* <View style={{ backgroundColor: "green" }}>
         <Text style={{ fontSize: 23, color: "white", padding: 10 }}>
           New Releases
         </Text>
@@ -81,8 +63,16 @@ export default function SecScreen({ navigation }) {
             <Text>Box 4</Text>
           </View>
         </View>
-      </View>
-      <View style={styles.bottomNav}>
+      </View> */}
+      <BottomNavComp
+        icon={"88"}
+        home={"HOME"}
+        new={"New and Hot"}
+        laugh={"Fast Laughs"}
+        search={"Search"}
+        downloads={"Downloads"}
+      />
+      {/* <View style={styles.bottomNav}>
         <View style={styles.bottomNavBtn}>
           <Text>88</Text>
           <Text>HOME</Text>
@@ -103,7 +93,7 @@ export default function SecScreen({ navigation }) {
           <Text>88</Text>
           <Text>Downloads</Text>
         </View>
-      </View>
+      </View> */}
     </View>
   );
 }
@@ -113,49 +103,6 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "yellow",
     //alignContent: "center",
-  },
-  logo: {
-    color: "red",
-    fontWeight: "bold",
-    fontSize: 35,
-    padding: 10,
-  },
-  headerRight: {
-    flexDirection: "row",
-    //color: "white",
-    //fontSize: 28,
-    paddingTop: 20,
-    paddingRight: 25,
-    //paddingLeft: 170,
-  },
-  headerText: {
-    color: "white",
-    fontSize: 20,
-    fontWeight: "bold",
-  },
-  subHeader: {
-    flexDirection: "row",
-    justifyContent: "space-evenly",
-  },
-  subText: {
-    color: "white",
-    fontSize: 20,
-    fontWeight: "bold",
-  },
-  midSection: {
-    flexDirection: "row",
-    backgroundColor: "grey",
-    justifyContent: "space-evenly",
-    padding: 15,
-  },
-  midButtons: {
-    alignItems: "center",
-  },
-  midText: {
-    color: "white",
-    fontSize: 18,
-    fontWeight: "bold",
-    padding: 5,
   },
   boxContainer: {
     flexDirection: "row",

@@ -1,6 +1,7 @@
 import { StyleSheet, Text, View, Image } from "react-native";
 import React from "react";
 import { heightPercentageToDP, widthPercentageToDP } from "../../utils/scaler";
+import MainPictureComp from "../components/MainPictureComp";
 
 const Author = "John Kearns";
 const Views = "1.5M";
@@ -10,12 +11,16 @@ export default function PracticeScreen({ route }) {
   const { itemId, otherParams } = route.params;
   return (
     <View style={styles.container}>
-      <View style={styles.containerB}>
+      <MainPictureComp
+        //image={"../images/practiceImage.jpeg"}
+        time={"8:15"}
+      />
+      {/* <View style={styles.containerB}>
         <Image
           source={require("../images/practiceImage.jpeg")}
           style={styles.image}
         />
-        {/* put view here wrapping text, styling goes here*/}
+        put view here wrapping text, styling goes here
         <Text
           style={{
             position: "absolute",
@@ -29,7 +34,7 @@ export default function PracticeScreen({ route }) {
         >
           8:15
         </Text>
-      </View>
+      </View> */}
       <View
         style={{
           flexDirection: "row",
@@ -71,14 +76,6 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     marginTop: 20,
     fontSize: 20,
-  },
-  image: {
-    height: 430,
-    width: 430,
-  },
-
-  containerB: {
-    //position: "absolute",
   },
 
   // time: {

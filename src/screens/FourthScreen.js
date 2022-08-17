@@ -2,24 +2,18 @@ import { StyleSheet, Text, View, Image } from "react-native";
 import React from "react";
 import { heightPercentageToDP, widthPercentageToDP } from "../../utils/scaler";
 import Icon from "react-native-vector-icons/Ionicons";
+import HeaderComponent from "../components/FourthScreenComps/HeaderComponent";
+import BigButtonsComp from "../components/FourthScreenComps/BigButtonsComp";
 
 export default function FourthScreen() {
   return (
     <View style={styles.container}>
-      <View style={styles.header}>
-        <View style={styles.headerInfo}>
-          <Text style={{ fontSize: 35, fontWeight: "bold" }}>Amy</Text>
-        </View>
-        <View style={styles.headerInfo}>
-          <Text style={styles.headerText}>23,</Text>
-        </View>
-        <View style={styles.headerInfo}>
-          <Text style={styles.headerText}>Los Angeles,</Text>
-        </View>
-        <View style={styles.headerInfo}>
-          <Text style={styles.headerText}>5'5</Text>
-        </View>
-      </View>
+      <HeaderComponent
+        name={"Amy"}
+        age={"23"}
+        city={"Los Angeles"}
+        height={"5'5"}
+      />
       <View style={styles.imageContainer}>
         <Image
           source={require("../images/pexels-frida.jpg")}
@@ -29,7 +23,8 @@ export default function FourthScreen() {
           }}
         ></Image>
       </View>
-      <View style={styles.buttonsContainer}>
+      <BigButtonsComp pass={"Pass"} like={"Like"} setup={"Set Up"} />
+      {/* <View style={styles.buttonsContainer}>
         <View style={[styles.btn, styles.passBtn]}>
           <Text style={styles.textBtn}>Pass</Text>
           <Icon
@@ -57,7 +52,7 @@ export default function FourthScreen() {
         <View style={[styles.btn, styles.setupBtn]}>
           <Text style={styles.textBtn}>Set Up</Text>
         </View>
-      </View>
+      </View> */}
       <View style={styles.partialLineBtm}></View>
       <View style={styles.infoContainer}>
         <View>
@@ -85,21 +80,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "grey",
-  },
-  header: {
-    backgroundColor: "grey",
-    height: heightPercentageToDP(12),
-    //justifyContent: "flex-end",
-    flexDirection: "row",
-  },
-  headerInfo: {
-    justifyContent: "flex-end",
-    marginLeft: widthPercentageToDP(2),
-  },
-  headerText: {
-    //fontSize: 18,
-    fontSize: heightPercentageToDP(2),
-    marginBottom: heightPercentageToDP(0.7),
   },
   imageContainer: {
     backgroundColor: "yellow",
